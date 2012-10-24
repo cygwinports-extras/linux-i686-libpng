@@ -1,0 +1,20 @@
+CROSS_HOST="i686-pc-linux-gnu"
+inherit cross
+
+NAME="linux-i686-libpng"
+VERSION=1.5.13
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="PNG graphics library for Linux i686 toolchain"
+DESCRIPION="This package does NOT contain cygwin binaries.
+Instead, it contains Linux ELF binaries.  It is for use with the
+linux-i686-gcc cross compiler, and installs into the
+/usr/i686-pc-linux-gnu/sys-root/usr/{lib,include} directories."
+HOMEPAGE="http://www.libpng.org/pub/png/libpng.html"
+SRC_URI="mirror://sourceforge/libpng/libpng-${VERSION}.tar.xz"
+SRC_DIR="libpng-${VERSION}"
+PATCH_URI="1.4.11-automake.patch"
+
+MAKEOPTS+=" dist_man_MANS= "
+
+KEEP_LA_FILES="none"
